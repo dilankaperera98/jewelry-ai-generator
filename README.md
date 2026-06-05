@@ -42,14 +42,14 @@ Structured JSON Output
 ## Project Structure
 
 jewelry-ai-generator/
-├── core/                  # LLM engine — Claude API integration
-├── prompts/               # Prompt templates — separated for easy iteration
-├── validation/            # Pydantic schema enforcement
-├── pipeline/              # Orchestration + self-correcting retry loop
-├── api/                   # FastAPI routes and request/response models
-├── rag/                   # Retrieval layer (in development)
-├── server.py              # API server entry point
-└── main.py                # CLI entry point
+- core/                  # LLM engine — Claude API integration
+- prompts/               # Prompt templates — separated for easy iteration
+- validation/            # Pydantic schema enforcement
+- pipeline/              # Orchestration + self-correcting retry loop
+- api/                   # FastAPI routes and request/response models
+- rag/                   # Retrieval layer (in development)
+- server.py              # API server entry point
+- main.py                # CLI entry point
 
 ## Key Engineering Decisions
 
