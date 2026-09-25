@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "documents": [
+    {
+      "document_id": "DOC-CARE-001",
+      "title": "Demo Jewelry Care Guidance",
+      "source": "synthetic_demo_care_guide",
+      "category": "material_care",
+      "is_synthetic": true,
+      "content": "This synthetic care guide demonstrates general after-purchase guidance rather than a JK Pottery business policy. Pearl jewelry should be kept away from perfume, hairspray, and abrasive cleaners. Wipe pearls with a soft, slightly damp cloth after wear and let them dry before storage. Store pearl pieces separately from harder jewelry that could scratch their surface. Sterling silver may tarnish when exposed to moisture and sulfur compounds. A dry anti-tarnish pouch and a suitable silver polishing cloth can reduce visible tarnish. Gold jewelry can be cleaned with mild soap, lukewarm water, and a soft brush, then rinsed and dried completely. Ceramic components should be protected from drops and hard impacts even when their glazed surfaces resist ordinary scratching. Customers should follow any material-specific instructions supplied with a finished piece."
+    },
+    {
+      "document_id": "DOC-MFG-001",
+      "title": "Synthetic Ceramic Component Manufacturing Notes",
+      "source": "synthetic_demo_manufacturing_guide",
+      "category": "manufacturing",
+      "is_synthetic": true,
+      "content": "These synthetic manufacturing notes illustrate considerations for handmade ceramic jewelry components. Clay bodies shrink during drying and firing, so bead diameter, thickness, and stringing-hole dimensions should be planned with a tested shrinkage allowance. A maker should record the clay body, glaze, firing schedule, and measured result for repeatable batches. Holes should be formed cleanly and checked again before firing because glaze can narrow an opening. Glaze should be kept away from surfaces that contact kiln furniture. After firing, components should be inspected for sharp edges, cracks, blocked holes, and unstable glaze. Small differences in color and dimensions are expected in handmade demo products, but tolerances should be defined before assembly. Load-bearing findings and cord should be selected only after the final fired component weight and hole size are known."
+    },
+    {
+      "document_id": "DOC-CUSTOM-001",
+      "title": "Synthetic Customization Discovery Checklist",
+      "source": "synthetic_demo_customization_guide",
+      "category": "customization",
+      "is_synthetic": true,
+      "content": "This synthetic checklist demonstrates a customization process and is not a statement of JK Pottery policy. Begin by recording the jewelry category, intended occasion, preferred colors, approximate dimensions, material sensitivities, and target budget. Translate subjective words such as delicate, bold, warm, or organic into visible design choices that can be confirmed. For color-sensitive work, use a named palette or approved sample because screen colors and fired glaze colors may differ. Confirm necklace length, bracelet fit, ring size, earring weight expectations, and closure preferences before production. Engraving requests need exact spelling, capitalization, placement, and an agreed character limit. The customer should approve a concise written design summary before irreversible work starts. Any estimate should remain separate from a final quote until dimensions, materials, findings, and finishing requirements are confirmed."
+    },
+    {
+      "document_id": "DOC-QUALITY-001",
+      "title": "Synthetic Jewelry Assembly and Quality Notes",
+      "source": "synthetic_demo_quality_guide",
+      "category": "quality_process",
+      "is_synthetic": true,
+      "content": "These synthetic notes describe a small-batch quality review. Before assembly, compare components with the approved design summary and check color grouping, orientation, dimensions, and visible surface condition. Findings should close fully without sharp wire ends. Jump rings should be aligned rather than pulled apart along their circular plane. Thread, cord, and wire should be appropriate for the component weight and hole edges. After assembly, gently test clasps, connections, and moving parts without applying destructive force. Confirm that earrings are balanced as a pair and that necklace or bracelet elements hang in the intended direction. The final review should record any accepted handmade variation. Clean the finished item using a method suitable for its most delicate material, then photograph and package it without adding residues from polishing products."
+    },
+    {
+      "document_id": "DOC-PACK-001",
+      "title": "Synthetic Packaging Guidance for Fragile Jewelry",
+      "source": "synthetic_demo_packaging_guide",
+      "category": "packaging",
+      "is_synthetic": true,
+      "content": "This synthetic packaging guide demonstrates handling for jewelry with fragile ceramic or delicate surface elements. Immobilize the piece inside its presentation box so it cannot strike the box walls during movement. Separate chains, pendants, and earrings where practical to reduce tangling and abrasion. A soft pouch can protect polished metal, but it should not place pressure on raised ceramic details. Include concise care information identifying the most delicate component. For shipping, place the presentation box inside a larger rigid container with cushioning on every side. The package should be able to withstand ordinary handling without the inner box moving freely. Packaging tests should use representative product weight and geometry. This guidance is illustrative and does not replace carrier requirements, insurance decisions, or a validated commercial packaging test."
+    }
+  ]
+}

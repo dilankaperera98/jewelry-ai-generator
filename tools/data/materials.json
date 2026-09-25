@@ -1,0 +1,42 @@
+[
+  {
+    "name": "gold",
+    "aliases": ["yellow gold", "rose gold", "white gold"],
+    "durability": "Durable for everyday jewelry; higher-karat gold is softer.",
+    "care": "Clean with mild soap and a soft cloth; avoid harsh chemicals.",
+    "hypoallergenic": true,
+    "price_tier": "luxury"
+  },
+  {
+    "name": "sterling silver",
+    "aliases": ["silver", "925 silver"],
+    "durability": "Suitable for everyday jewelry but can scratch and tarnish.",
+    "care": "Store dry and polish with a silver cloth.",
+    "hypoallergenic": true,
+    "price_tier": "mid"
+  },
+  {
+    "name": "ceramic",
+    "aliases": ["jewelry ceramic"],
+    "durability": "Scratch-resistant but may chip if struck or dropped.",
+    "care": "Wipe with a damp soft cloth and protect from hard impacts.",
+    "hypoallergenic": true,
+    "price_tier": "budget"
+  },
+  {
+    "name": "pearl",
+    "aliases": ["freshwater pearl"],
+    "durability": "Delicate organic gemstone that can scratch easily.",
+    "care": "Keep away from perfume and chemicals; wipe after wearing.",
+    "hypoallergenic": true,
+    "price_tier": "mid"
+  },
+  {
+    "name": "platinum",
+    "aliases": [],
+    "durability": "Dense, durable, and well suited to long-term wear.",
+    "care": "Clean with mild soap; professional polishing removes patina.",
+    "hypoallergenic": true,
+    "price_tier": "luxury"
+  }
+]

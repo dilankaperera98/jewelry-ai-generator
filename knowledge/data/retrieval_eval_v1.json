@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "cases": [
+    {
+      "query": "How should pearl jewelry be cleaned and stored?",
+      "expected_document_ids": ["DOC-CARE-001"]
+    },
+    {
+      "query": "How should ceramic bead holes account for firing shrinkage?",
+      "expected_document_ids": ["DOC-MFG-001"]
+    },
+    {
+      "query": "What should be confirmed before approving engraving and custom colors?",
+      "expected_document_ids": ["DOC-CUSTOM-001"]
+    },
+    {
+      "query": "What connections and clasps should be checked during final assembly inspection?",
+      "expected_document_ids": ["DOC-QUALITY-001"]
+    },
+    {
+      "query": "How can fragile ceramic jewelry be protected during shipping?",
+      "expected_document_ids": ["DOC-PACK-001"]
+    }
+  ]
+}

@@ -1,16 +1,19 @@
-from pydantic import BaseModel, field_validator
-from typing import List, Literal
 import json
+from typing import Literal
+
+from pydantic import BaseModel, ConfigDict, field_validator
 
 
 class JewelryProduct(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     product_name: str
     category: Literal["earrings", "necklace", "bracelet", "ring", "other"]
     style: Literal["minimal", "bold", "vintage", "modern", "boho"]
-    materials: List[str]
-    colors: List[str]
+    materials: list[str]
+    colors: list[str]
     price_range: Literal["budget", "mid", "luxury"]
-    tags: List[str]
+    tags: list[str]
 
     @field_validator("product_name")
     @classmethod
@@ -25,6 +28,16 @@ class JewelryProduct(BaseModel):
         if len(v) == 0:
             raise ValueError("At least one material is required")
         return v
+
+    @field_validator("materials", "colors", "tags")
+    @classmethod
+    def list_items_must_not_be_blank(cls, values):
+        cleaned = []
+        for value in values:
+            if not value.strip():
+                raise ValueError("List entries cannot be blank")
+            cleaned.append(value.strip())
+        return cleaned
 
 
 def parse_and_validate(raw_json: str) -> JewelryProduct:

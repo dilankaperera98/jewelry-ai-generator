@@ -1,0 +1,56 @@
+[
+  {
+    "id": "J-1001",
+    "name": "Minimal Gold Hoop Earrings",
+    "category": "earrings",
+    "style": "minimal",
+    "materials": ["gold"],
+    "colors": ["gold"],
+    "price_usd": 240
+  },
+  {
+    "id": "J-1002",
+    "name": "Sterling Silver Moon Ring",
+    "category": "ring",
+    "style": "modern",
+    "materials": ["sterling silver"],
+    "colors": ["silver"],
+    "price_usd": 85
+  },
+  {
+    "id": "J-1003",
+    "name": "Ceramic Bead Bracelet",
+    "category": "bracelet",
+    "style": "boho",
+    "materials": ["ceramic"],
+    "colors": ["red", "white"],
+    "price_usd": 48
+  },
+  {
+    "id": "J-1004",
+    "name": "Rose Gold Pearl Necklace",
+    "category": "necklace",
+    "style": "vintage",
+    "materials": ["gold", "pearl"],
+    "colors": ["rose gold", "white"],
+    "price_usd": 320
+  },
+  {
+    "id": "J-1005",
+    "name": "Platinum Statement Ring",
+    "category": "ring",
+    "style": "bold",
+    "materials": ["platinum"],
+    "colors": ["silver"],
+    "price_usd": 950
+  },
+  {
+    "id": "J-1006",
+    "name": "Silver Pearl Drop Earrings",
+    "category": "earrings",
+    "style": "vintage",
+    "materials": ["sterling silver", "pearl"],
+    "colors": ["silver", "white"],
+    "price_usd": 140
+  }
+]
