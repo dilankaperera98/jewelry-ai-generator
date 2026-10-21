@@ -1,5 +1,6 @@
 import argparse
 import json
+import sys
 from pathlib import Path
 
 from knowledge.retriever import Retriever, create_default_retriever
@@ -59,9 +60,21 @@ def evaluate_retrieval(
     }
 
 
-def main() -> None:
+def main() -> int:
     parser = argparse.ArgumentParser(description="Evaluate the local retrieval index")
     parser.add_argument("--top-k", type=int, default=3)
+    parser.add_argument(
+        "--min-hit-rate",
+        type=float,
+        default=None,
+        help="Exit with status 1 if Hit Rate@K is below this value.",
+    )
+    parser.add_argument(
+        "--min-recall",
+        type=float,
+        default=None,
+        help="Exit with status 1 if Recall@K is below this value.",
+    )
     args = parser.parse_args()
     metrics = evaluate_retrieval(
         create_default_retriever(),
@@ -70,6 +83,17 @@ def main() -> None:
     )
     print(json.dumps(metrics, indent=2))
 
+    failures = []
+    if args.min_hit_rate is not None and metrics["hit_rate_at_k"] < args.min_hit_rate:
+        failures.append(
+            f"hit_rate_at_k {metrics['hit_rate_at_k']} < {args.min_hit_rate}"
+        )
+    if args.min_recall is not None and metrics["recall_at_k"] < args.min_recall:
+        failures.append(f"recall_at_k {metrics['recall_at_k']} < {args.min_recall}")
+    for failure in failures:
+        print(f"threshold not met: {failure}", file=sys.stderr)
+    return 1 if failures else 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

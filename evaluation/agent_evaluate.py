@@ -232,7 +232,7 @@ def evaluate_cases(cases: list[dict]) -> dict:
     return {"version": "1.0", "metrics": metrics, "cases": results}
 
 
-def main() -> None:
+def main() -> int:
     logging.basicConfig(level=logging.CRITICAL, force=True)
     report = evaluate_cases(load_cases())
     print("Agent evaluation v1.0")
@@ -248,7 +248,8 @@ def main() -> None:
         )
     ]
     print(f"expectation_failures: {len(failed_expectations)}")
+    return 1 if failed_expectations else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
