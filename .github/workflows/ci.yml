@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # No API key is configured: every test and evaluation below runs offline
+      # against fake or scripted LLM clients and never calls a model provider.
+      - name: Run tests
+        run: pytest -q
+
+      - name: Run retrieval evaluation
+        run: python -m knowledge.evaluate --top-k 3 --min-hit-rate 1.0 --min-recall 1.0
+
+      - name: Run agent evaluation
+        run: python -m evaluation.agent_evaluate
