@@ -53,6 +53,20 @@ def test_invalid_tool_arguments_are_rejected():
         create_default_registry().invoke("lookup_material", {"material": "   "})
 
 
+@pytest.mark.parametrize(
+    ("tool_name", "arguments"),
+    [
+        ("search_catalog", {"query": "ring", "limit": 0}),
+        ("search_catalog", {"query": "ring", "limit": 6}),
+        ("search_knowledge", {"query": "ring care", "top_k": 0}),
+        ("search_knowledge", {"query": "ring care", "top_k": 6}),
+    ],
+)
+def test_bounded_integer_tool_arguments_are_rejected(tool_name, arguments):
+    with pytest.raises(InvalidToolArgumentsError):
+        create_default_registry().invoke(tool_name, arguments)
+
+
 def test_tool_execution_failure_is_wrapped():
     def failing_tool(arguments):
         raise RuntimeError("internal fixture failure")

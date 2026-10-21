@@ -9,6 +9,30 @@ from prompts.agent_prompt import AGENT_SYSTEM_PROMPT
 from prompts.jewelry_prompt import JEWELRY_SYSTEM_PROMPT
 
 
+def _anthropic_input_schema(schema: dict[str, Any]) -> dict[str, Any]:
+    """Return an Anthropic-compatible copy of a tool input schema.
+
+    Anthropic strict tool schemas reject numeric bounds on integer fields. The
+    canonical Pydantic models retain those constraints for application-side
+    validation before either local or MCP execution.
+    """
+    converted = {}
+    is_integer = schema.get("type") == "integer"
+    for key, value in schema.items():
+        if is_integer and key in {"minimum", "maximum"}:
+            continue
+        if isinstance(value, dict):
+            converted[key] = _anthropic_input_schema(value)
+        elif isinstance(value, list):
+            converted[key] = [
+                _anthropic_input_schema(item) if isinstance(item, dict) else item
+                for item in value
+            ]
+        else:
+            converted[key] = value
+    return converted
+
+
 class LLMProviderError(RuntimeError):
     """Raised when the configured LLM provider cannot complete a request."""
 
@@ -93,7 +117,7 @@ class AnthropicLLMClient:
             {
                 "name": tool["name"],
                 "description": tool["description"],
-                "input_schema": tool["input_schema"],
+                "input_schema": _anthropic_input_schema(tool["input_schema"]),
                 "strict": True,
             }
             for tool in tools
